@@ -37,7 +37,7 @@
 										<th>Last Login</th>
 										<th>Photo</th>
 										<th>Created At</th>
-										<th>Is Active</th>
+										<th>Role</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -69,7 +69,7 @@
 											<?php echo $user->created_at ?>
 										</td>
 										<td>
-											<?php echo $user->is_active ?>
+										<?php echo $user->role ?>
 										</td>
 										<td width="250">
 											<a href="<?php echo site_url('admin/users/edit/'.$user->user_id) ?>"

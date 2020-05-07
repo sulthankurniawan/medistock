@@ -14,7 +14,6 @@ class User_model extends CI_Model
     public $last_login;
     public $photo = "default.jpg";
     public $created_at;
-    public $is_active;
 
     public function rules()
     {

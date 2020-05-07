@@ -68,15 +68,6 @@
 							</div>
 
 							<div class="form-group">
-								<label for="full_name">Full Name*</label>
-								<input class="form-control <?php echo form_error('full_name') ? 'is-invalid':'' ?>"
-								 type="text" name="full_name" placeholder="User full name" />
-								<div class="invalid-feedback">
-									<?php echo form_error('full_name') ?>
-								</div>
-							</div>
-
-							<div class="form-group">
 								<label for="phone">Phone Number*</label>
 								<input class="form-control <?php echo form_error('phone') ? 'is-invalid':'' ?>"
 								 type="tel" name="phone" placeholder="User phone number" />
