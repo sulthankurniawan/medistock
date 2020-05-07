@@ -62,7 +62,7 @@
 
 							<div class="form-group">
 								<label for="name">Photo</label>
-								<input class="form-control-file <?php echo form_error('price') ? 'is-invalid':'' ?>"
+								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
 								 type="file" name="image" />
 								<div class="invalid-feedback">
 									<?php echo form_error('image') ?>

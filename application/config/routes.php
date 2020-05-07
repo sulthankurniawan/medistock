@@ -58,6 +58,6 @@ $route['contact'] = 'welcome/contact';
 
 $route['admin'] = 'admin/overview';
 
-$route['customer'] = '';
+// $route['customer'] = '';
 
 

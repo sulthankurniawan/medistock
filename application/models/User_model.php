@@ -42,7 +42,6 @@ class User_model extends CI_Model
             ['field' => 'role',
             'label' => 'Role',
             'rules' => 'required']
-
         ];
     }
 
@@ -69,7 +68,7 @@ class User_model extends CI_Model
         $this->db->insert($this->_table, $this);
     }
 
-    public function save()
+    public function update()
     {
         $post = $this->input->post();
         $this->user_id = $post["id"];

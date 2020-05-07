@@ -21,7 +21,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/products/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('admin/users/add') ?>"><i class="fas fa-plus"></i> Add New</a>
 					</div>
 					<div class="card-body">
 
@@ -29,35 +29,52 @@
 							<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 								<thead>
 									<tr>
-										<th>Name</th>
-										<th>Category</th>
-										<th>Price</th>
+										<th>Id</th>
+										<th>Username</th>
+										<th>Email</th>
+										<th>Full Name</th>
+										<th>Phone Number</th>
+										<th>Last Login</th>
 										<th>Photo</th>
-										<th>Description</th>
+										<th>Created At</th>
+										<th>Is Active</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach ($products as $product): ?>
+									<?php foreach ($users as $user): ?>
 									<tr>
 										<td width="150">
-											<?php echo $product->name ?>
+											<?php echo $user->user_id ?>
 										</td>
 										<td>
-											<?php echo $product->category ?>
+											<?php echo $user->username ?>
 										</td>
 										<td>
-											<?php echo $product->price ?>
+											<?php echo $user->email ?>
 										</td>
 										<td>
-											<img src="<?php echo base_url('upload/product/'.$product->image) ?>" width="64" />
+											<?php echo $user->full_name ?>
 										</td>
-										<td class="small">
-											<?php echo substr($product->description, 0, 120) ?>...</td>
+										<td>
+											<?php echo $user->phone ?>
+										</td>
+										<td>
+											<?php echo $user->last_login ?>
+										</td>
+										<td>
+											<img src="<?php echo base_url('upload/user/'.$user->photo) ?>" width="64" />
+										</td>
+										<td>
+											<?php echo $user->created_at ?>
+										</td>
+										<td>
+											<?php echo $user->is_active ?>
+										</td>
 										<td width="250">
-											<a href="<?php echo site_url('admin/products/edit/'.$product->product_id) ?>"
+											<a href="<?php echo site_url('admin/users/edit/'.$user->user_id) ?>"
 											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/products/delete/'.$product->product_id) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('admin/users/delete/'.$user->user_id) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>
 									</tr>

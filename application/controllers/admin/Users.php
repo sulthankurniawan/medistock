@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Products extends CI_Controller
+class Users extends CI_Controller
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class Products extends CI_Controller
 
     public function index()
     {
-        $data["users"] = $this->product_model->getAll();
+        $data["users"] = $this->user_model->getAll();
         $this->load->view("admin/user/list", $data);
     }
 
