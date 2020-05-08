@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -8,7 +8,7 @@ class Products extends CI_Controller
     {
         parent::__construct();
         $this->load->model("product_model");
-        $this->load->library('form_validation');
+        $this->load->library("form_validation");
         $this->load->model("user_model");
         if($this->user_model->isNotLogin()) redirect(site_url('login'));
     }

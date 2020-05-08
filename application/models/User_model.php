@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php 
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
@@ -105,14 +107,14 @@ class User_model extends CI_Model
             if($isPasswordTrue && $isAdmin){ 
                 // login sukses
                 $this->session->set_userdata(['user_logged' => $user]);
-                $this->_updateLastLogin($user->user_id);
+                // $this->_updateLastLogin($user->user_id);
                 return 'admin';
             }
             // jika password benar dan dia customer
             if($isPasswordTrue && $isCustomer){
                 // login sukses
                 $this->session->set_userdata(['user_logged' => $user]);
-                $this->_updateLastLogin($user->user_id);
+                // $this->_updateLastLogin($user->user_id);
                 return 'customer';
             }
         }

@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php 
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product_model extends CI_Model
 {
@@ -37,9 +39,9 @@ class Product_model extends CI_Model
         return $this->db->get($this->_table)->result();
     }
     
-    public function getById($id)
+    public function getById($product_id)
     {
-        return $this->db->get_where($this->_table, ["product_id" => $id])->row();
+        return $this->db->get_where($this->_table, ["product_id" => $product_id])->row();
     }
 
     public function save()

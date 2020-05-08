@@ -55,10 +55,7 @@
 										<td class="small">
 											<?php echo substr($product->description, 0, 120) ?>...</td>
 										<td width="250">
-											<a href="<?php echo site_url('customer/products/edit/'.$product->product_id) ?>"
-											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('customer/products/delete/'.$product->product_id) ?>')"
-											 href="#!" class="btn btn-small text-primary"><i class="fas fa-trash"></i> Add to cart</a>
+											<button class="add_cart btn btn-success btn-block" data-product_id="<?php echo $product->product_id ?>" data-product_name="<?php echo $product->name ?>" data-product_category="<?php echo $product->category ?>" data-product_price="<?php echo $product->price ?>">Add To Cart</button>
 										</td>
 									</tr>
 									<?php endforeach; ?>
@@ -70,7 +67,28 @@
 				</div>
 
 			</div>
+			<!-- shoping cart -->
+			<div class="col-md-4">
+				<h4>Shopping Cart</h4>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Produk</th>
+							<th>Harga</th>
+							<th>Qty</th>
+							<th>Subtotal</th>
+							<th>Aksi</th>
+						</tr>
+					</thead>
+					<tbody id="detail_cart">
+
+					</tbody>
+					
+				</table>
+			</div>
 			<!-- /.container-fluid -->
+
+			
 
 			<!-- Sticky Footer -->
 			<?php $this->load->view("customer/_partials/footer.php") ?>
@@ -87,17 +105,42 @@
 
 	<?php $this->load->view("customer/_partials/js.php") ?>
 
-	<script>
-	function deleteConfirm(url){
-		$('#btn-delete').attr('href', url);
-		$('#deleteModal').modal();
-	}
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            
-        })
-    </script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.add_cart').click(function(){
+				var product_id    = $(this).data("product_id");
+				var name  = $(this).data("product_name");
+				var category = $(this).data("product_category");
+				var price = $(this).data("product_price");
+				var quantity     = $('#' + produk_id).val();
+				$.ajax({
+					url : "<?php echo base_url() ?>index.php/cart/add_to_cart",
+					method : "POST",
+					data : {produk_id: produk_id, produk_nama: produk_nama, produk_harga: produk_harga, quantity: quantity},
+					success: function(data){
+						$('#detail_cart').html(data);
+					}
+				});
+			});
+
+			// Load shopping cart
+			$('#detail_cart').load("<?php echo base_url();?>index.php/cart/load_cart");
+
+			//Hapus Item Cart
+			$(document).on('click','.hapus_cart',function(){
+				var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
+				$.ajax({
+					url : "<?php echo base_url();?>cart/hapus_cart",
+					method : "POST",
+					data : {row_id : row_id},
+					success :function(data){
+						$('#detail_cart').html(data);
+					}
+				});
+			});
+		});
+	</script>
+
 </body>
 
 </html>
