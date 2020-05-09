@@ -16,6 +16,6 @@ class Products extends CI_Controller
     public function index()
     {
         $data["products"] = $this->product_model->getAll();
-        $this->load->view("customer/product/home", $data);
+        $this->load->view("customer/home", $data);
     }
 }

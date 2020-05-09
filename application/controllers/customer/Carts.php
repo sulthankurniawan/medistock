@@ -22,6 +22,7 @@ class Carts extends CI_Controller{
 			$output .='
 				<tr>
 					<td>'.$items['name'].'</td>
+					<td>'.$items['category'].'</td>
 					<td>'.number_format($items['price']).'</td>
 					<td>'.$items['qty'].'</td>
 					<td>'.number_format($items['subtotal']).'</td>
@@ -43,7 +44,7 @@ class Carts extends CI_Controller{
 			'id' => $this->input->post('produk_id'), 
 			'name' => $this->input->post('produk_nama'), 
 			'price' => $this->input->post('produk_harga'), 
-			'qty' => $this->input->post('quantity'), 
+			'qty' => 1, 
 		);
 		$this->cart->insert($data);
 		echo $this->show_cart(); // tampilkan cart setelah added

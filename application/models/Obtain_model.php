@@ -2,18 +2,14 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Cart_model extends CI_Model
+class Obtain_model extends CI_Model
 {
-    private $_table = "carts";
-    private $_table2 = "obtains";
-    private $_table3 = "users"
+    private $_table = "obtains";
 
     public $obtain_id;
     public $cart_id;
-    public $user_id;
-    public $total;
-    public $created_at;
-    public $status;
+    public $product_id;
+    public $quantity;
 
     public function getAll()
     {
@@ -44,10 +40,11 @@ class Cart_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->cart_id = uniqid();
-        $this->user_id = $post["user_id"];
-        $this->total = $post["total"];
-        $this->status = $post["status"];
+        $this->obtain_id = uniqid();
+        $this->cart_id = $post["cart_id"];
+        $this->product_id = $post["product_id"];
+        $this->quantity = $post["quantity"];
         $this->db->insert($this->_table, $this);
     }
+	
 }
