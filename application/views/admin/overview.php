@@ -17,7 +17,7 @@
 
 		<?php $this->load->view("admin/_partials/breadcrumb.php") ?>
 
-			<!-- DataTables -->
+		<!-- DataTables -->
 			<div class="card mb-3">
 				<div class="card-header">
 					<center><h4>Pesanan</h4></center>
@@ -28,12 +28,12 @@
 						<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 							<thead>
 								<tr>
-									<th>Created At</th>
-									<th>Items</th>
-									<th>Quantity</th>
-									<th>Prices</th>
+									<th>Waktu keranjang dibuat</th>
+									<th>Produk yang dipesan</th>
+									<th>Kuantitas</th>
+									<th>Harga</th>
 									<th>Total</th>
-									<th>Status</th>
+									<th>Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -75,7 +75,7 @@
 						</table>
 					</div>
 				</div>
-			</div>
+			</div>	
 
 		</div>
 		<!-- /.container-fluid -->

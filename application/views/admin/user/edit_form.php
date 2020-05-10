@@ -28,8 +28,7 @@
 				<div class="card mb-3">
 					<div class="card-header">
 
-						<a href="<?php echo site_url('admin/users/') ?>"><i class="fas fa-arrow-left"></i>
-							Back</a>
+						<a href="<?php echo site_url('admin/users/') ?>"><i class="fas fa-arrow-left"></i> Kembali </a>
 					</div>
 					<div class="card-body">
 
@@ -66,7 +65,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="full_name">Full Name*</label>
+								<label for="full_name">Nama Lengkap*</label>
 								<input class="form-control <?php echo form_error('full_name') ? 'is-invalid':'' ?>"
 								 type="text" name="full_name" placeholder="User full name" value="<?php echo $user->full_name ?>" />
 								<div class="invalid-feedback">
@@ -75,7 +74,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="phone">Phone Number*</label>
+								<label for="phone">Nomor Telepon*</label>
 								<input class="form-control <?php echo form_error('phone') ? 'is-invalid':'' ?>"
 								 type="tel" name="phone" placeholder="User phone number" value="<?php echo $user->phone ?>" />
 								<div class="invalid-feedback">
@@ -84,7 +83,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="role">Role*</label>
+								<label for="role">Jabatan*</label>
 								<select class="form-control <?php echo form_error('role') ? 'is-invalid':'' ?>"
 								name="role" placeholder="User role" value="<?php echo $user->role ?>">
 								<option>customer</option>
@@ -93,7 +92,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Image</label>
+								<label for="name">Gambar</label>
 								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
 								 type="file" name="image" />
 								<input type="hidden" name="old_image" value="<?php echo $user->image ?>" />

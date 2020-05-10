@@ -21,7 +21,7 @@
 				<!-- DataTables -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/users/add') ?>"><i class="fas fa-plus"></i> Add New</a>
+						<a href="<?php echo site_url('admin/users/add') ?>"><i class="fas fa-plus"></i> Tambah Pengguna Baru </a>
 					</div>
 					<div class="card-body">
 
@@ -32,13 +32,13 @@
 										<th>Id</th>
 										<th>Username</th>
 										<th>Email</th>
-										<th>Full Name</th>
-										<th>Phone Number</th>
-										<th>Last Login</th>
-										<th>Image</th>
-										<th>Created At</th>
-										<th>Role</th>
-										<th>Action</th>
+										<th>Nama Lengkap</th>
+										<th>Nomor Telepon</th>
+										<th>Login Terakhir</th>
+										<th>Gambar</th>
+										<th>Waktu Pembuatan</th>
+										<th>Jabatan</th>
+										<th>Aksi</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -73,7 +73,7 @@
 										</td>
 										<td width="250">
 											<a href="<?php echo site_url('admin/users/edit/'.$user->user_id) ?>"
-											 class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+											 class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
 											<a onclick="deleteConfirm('<?php echo site_url('admin/users/delete/'.$user->user_id) ?>')"
 											 href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
 										</td>

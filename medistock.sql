@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Bulan Mei 2020 pada 12.31
+-- Waktu pembuatan: 10 Bulan Mei 2020 pada 18.06
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -64,6 +64,13 @@ CREATE TABLE `products` (
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `products`
+--
+
+INSERT INTO `products` (`product_id`, `name`, `category`, `price`, `image`, `description`) VALUES
+('5eb815724ec01', 'tabel', 'peralatan', 5000, '5eb815724ec01.jpg', 'ini tabel');
+
 -- --------------------------------------------------------
 
 --
@@ -79,7 +86,7 @@ CREATE TABLE `users` (
   `phone` varchar(20) NOT NULL,
   `role` enum('admin','customer') NOT NULL DEFAULT 'customer',
   `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `photo` varchar(64) NOT NULL DEFAULT 'user_no_image.jpg',
+  `image` varchar(64) NOT NULL DEFAULT 'user_no_image.jpg',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -87,8 +94,8 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `full_name`, `phone`, `role`, `last_login`, `photo`, `created_at`) VALUES
-('5eb46e7ead1b6', 'sulthanangka', '$2y$10$CB61gwXuvjl5ImoNYjh5Tez.u14xERhNJP5abxdZxZWzb.oLq2VTS', 'sulthan.kurniawan@gmail.com', 'Muhammad Sulthan Angka Kurniawan', '088802340948', 'admin', '2020-05-07 20:24:30', 'default.jpg', '2020-05-07 20:24:30'),
+INSERT INTO `users` (`user_id`, `username`, `password`, `email`, `full_name`, `phone`, `role`, `last_login`, `image`, `created_at`) VALUES
+('5eb46e7ead1b6', 'sulthanangka', '$2y$10$TkSdfmbpk6r6hHMDQCYiL.stkOsQt9yIKuzvW/31Ow.fLFb4kYJfy', 'sulthan.kurniawan@gmail.com', 'Muhammad Sulthan Angka Kurniawan', '088802340948', 'admin', '2020-05-10 15:25:17', '5eb46e7ead1b6.jpg', '2020-05-10 15:25:17'),
 ('5eb46ec050da6', 'admin', '$2y$10$QtfxMCuGePGajkukTes6kOB4KgHgMuUTauctCwbydOtUcIqm1ji.G', 'admin@mail.com', 'admin', '555555555', 'admin', '2020-05-07 20:25:36', 'default.jpg', '2020-05-07 20:25:36'),
 ('5eb47050d5ebe', 'customer', '$2y$10$7mSqfDroHyEt4kAqpiQHj.vwB97FJjgGFViCFelHE2sRCTInqugqO', 'customer@mail.com', 'customer', '555555555', 'customer', '2020-05-07 20:32:16', 'default.jpg', '2020-05-07 20:32:16');
 

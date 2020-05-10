@@ -26,13 +26,13 @@
 
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/products/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+						<a href="<?php echo site_url('admin/products/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
 					</div>
 					<div class="card-body">
 
 						<form action="<?php base_url('admin/product/add') ?>" method="post" enctype="multipart/form-data" >
 							<div class="form-group">
-								<label for="name">Name*</label>
+								<label for="name">Nama*</label>
 								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
 								 type="text" name="name" placeholder="Product name" />
 								<div class="invalid-feedback">
@@ -41,7 +41,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="category">Category*</label>
+								<label for="category">Kategori*</label>
 								<select class="form-control <?php echo form_error('category') ? 'is-invalid':'' ?>"
 								name="category" placeholder="product category">
 								<option>obat-obatan</option>
@@ -51,7 +51,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="price">Price*</label>
+								<label for="price">Harga*</label>
 								<input class="form-control <?php echo form_error('price') ? 'is-invalid':'' ?>"
 								 type="number" name="price" min="0" placeholder="Product price" />
 								<div class="invalid-feedback">
@@ -61,7 +61,7 @@
 
 
 							<div class="form-group">
-								<label for="name">Photo</label>
+								<label for="name">Gambar*</label>
 								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
 								 type="file" name="image" />
 								<div class="invalid-feedback">
@@ -70,7 +70,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Description*</label>
+								<label for="name">Deskripsi*</label>
 								<textarea class="form-control <?php echo form_error('description') ? 'is-invalid':'' ?>"
 								 name="description" placeholder="Product description..."></textarea>
 								<div class="invalid-feedback">

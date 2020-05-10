@@ -17,19 +17,19 @@
 						<!-- DataTables -->
 						<div class="card mb-8" >
 							<div class="card-header">
-								<center><h4>Our Products</h4></center>
+								<center><h4>Produk yang tersedia</h4></center>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
 									<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
 										<thead>
 											<tr>
-												<th>Name</th>
-												<th>Category</th>
-												<th>Price</th>
-												<th>Photo</th>
-												<th>Description</th>
-												<th>Action</th>
+												<th>Nama Produk</th>
+												<th>Kategori</th>
+												<th>Harga</th>
+												<th>Gambar</th>
+												<th>Deskripsi</th>
+												<th>Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -50,7 +50,7 @@
 												<td class="small">
 													<?php echo substr($product->description, 0, 120) ?>...</td>
 												<td>
-													<button class="add_cart btn btn-success btn-block" data-product_id="<?php echo $product->product_id ?>" data-product_name="<?php echo $product->name ?>" data-product_category="<?php echo $product->category ?>" data-product_price="<?php echo $product->price ?>" data-product_quantity=1>Add To Cart</button>
+													<button class="add_cart btn btn-success btn-block" data-product_id="<?php echo $product->product_id ?>" data-product_name="<?php echo $product->name ?>" data-product_category="<?php echo $product->category ?>" data-product_price="<?php echo $product->price ?>" data-product_quantity=1>Tambah ke keranjang</button>
 												</td>
 											</tr>
 											<?php endforeach; ?>
@@ -65,7 +65,7 @@
 					<div class="col-md-4">
 						<div class="card mb-4">
 							<div class="card-header">
-								<center><h4>Shopping Cart</h4></center>
+								<center><h4>Keranjang Belanja</h4></center>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -74,15 +74,16 @@
 											<tr>
 												<th>Produk</th>
 												<th>Harga</th>
-												<th>Qty</th>
+												<th>Kuantitas</th>
 												<th>Subtotal</th>
-												<th>Action</th>
+												<th>Aksi</th>
 											</tr>
 										</thead>
 										<tbody id="detail_cart">
 
 										</tbody>
 									</table>
+									<button class="add_cart btn btn-primary btn-block">Pesan</button>
 								</div>
 							</div>
 						</div>
@@ -114,11 +115,11 @@
 				var name = $(this).data("product_name");
 				var category = $(this).data("product_category");
 				var price = $(this).data("product_price");
-				var quantity = $('#' + produk_id).val();
+				var quantity = $('#' + product_id).val();
 				$.ajax({
 					url : "<?php echo base_url() ?>index.php/cart",
 					method : "POST",
-					data : {produk_id: produk_id, produk_nama: produk_nama, produk_harga: produk_harga, quantity: quantity},
+					data : {product_id: product_id, product_name: product_name, product_category: product_category, product_price: product_price, product_quantity: product_quantity},
 					success: function(data){
 						$('#detail_cart').html(data);
 					}
