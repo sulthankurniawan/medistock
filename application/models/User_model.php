@@ -14,7 +14,7 @@ class User_model extends CI_Model
     public $phone;
     public $role;
     public $last_login;
-    public $photo = "default.jpg";
+    public $image = "default.jpg";
     public $created_at;
 
     public function rules()
@@ -66,6 +66,7 @@ class User_model extends CI_Model
         $this->full_name = $post["full_name"];
         $this->phone = $post["phone"];
         $this->role = $post["role"];
+        $this->image = $this->_uploadImage();
         $this->db->insert($this->_table, $this);
     }
 
@@ -79,13 +80,50 @@ class User_model extends CI_Model
         $this->full_name = $post["full_name"];
         $this->phone = $post["phone"];
         $this->role = $post["role"];
+
+        if (!empty($_FILES["image"]["name"])) {
+            $this->image = $this->_uploadImage();
+        } else {
+            $this->image = $post["old_image"];
+        }
+
         $this->db->update($this->_table, $this, array('user_id' => $post['id']));
     }
 
     public function delete($id)
     {
+        $this->deleteImage($id);
         return $this->db->delete($this->_table, array("user_id" => $id));
     }
+
+    private function _uploadImage()
+    {
+        $config['upload_path']          = './upload/user/';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->user_id;
+        $config['overwrite']			= true;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('image')) {
+            return $this->upload->data("file_name");
+        }
+        
+        return "default.jpg";
+    }
+
+    private function _deleteImage($id)
+    {
+        $user = $this->getById($id);
+        if ($user->image != "default.jpg") {
+            $filename = explode(".", $user->image)[0];
+            return array_map('unlink', glob(FCPATH."upload/user/$filename.*"));
+        }
+    }
+
 
     public function doLogin(){
 		$post = $this->input->post();

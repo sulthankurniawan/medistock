@@ -35,7 +35,7 @@
 										<th>Full Name</th>
 										<th>Phone Number</th>
 										<th>Last Login</th>
-										<th>Photo</th>
+										<th>Image</th>
 										<th>Created At</th>
 										<th>Role</th>
 										<th>Action</th>
@@ -63,7 +63,7 @@
 											<?php echo $user->last_login ?>
 										</td>
 										<td>
-											<img src="<?php echo base_url('upload/user/'.$user->photo) ?>" width="64" />
+											<img src="<?php echo base_url('upload/user/'.$user->image) ?>" width="64" />
 										</td>
 										<td>
 											<?php echo $user->created_at ?>

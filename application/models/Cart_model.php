@@ -6,7 +6,7 @@ class Cart_model extends CI_Model
 {
     private $_table = "carts";
     private $_table2 = "obtains";
-    private $_table3 = "users"
+    private $_table3 = "users";
 
     public $obtain_id;
     public $cart_id;

@@ -48,7 +48,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Category*</label>
+								<label for="category">Category*</label>
 								<input class="form-control <?php echo form_error('category') ? 'is-invalid':'' ?>"
 								 type="text" name="category" placeholder="Product category" value="<?php echo $product->category ?>" />
 								<div class="invalid-feedback">
@@ -67,8 +67,8 @@
 
 
 							<div class="form-group">
-								<label for="name">Photo</label>
-								<input class="form-control-file <?php echo form_error('price') ? 'is-invalid':'' ?>"
+								<label for="image">Photo</label>
+								<input class="form-control-file <?php echo form_error('image') ? 'is-invalid':'' ?>"
 								 type="file" name="image" />
 								<input type="hidden" name="old_image" value="<?php echo $product->image ?>" />
 								<div class="invalid-feedback">
