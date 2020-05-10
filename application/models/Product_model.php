@@ -76,7 +76,7 @@ class Product_model extends CI_Model
 
     public function delete($id)
     {
-        $this->deleteImage($id);
+        $this->_deleteImage($id);
         return $this->db->delete($this->_table, array("product_id" => $id));
     }
 
